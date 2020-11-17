@@ -1,6 +1,6 @@
 /**
  * OpenKM, Open Document Management System (http://www.openkm.com)
- * Copyright (c) 2006-2017 Paco Avila & Josep Llort
+ * Copyright (c) Paco Avila & Josep Llort
  * <p>
  * No bytes were intentionally harmed during the development of this application.
  * <p>
@@ -27,12 +27,14 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "formElementsComplex")
-public class FormElementComplexList {
-    @XmlElement(name = "formElementComplex", required = true)
-    List<FormElementComplex> formElementsComplex = new ArrayList<FormElementComplex>();
+import com.openkm.bean.workflow.ProcessInstance;
 
-    public List<FormElementComplex> getList() {
-        return formElementsComplex;
-    }
+@XmlRootElement(name = "processInstances")
+public class ProcessInstanceList {
+	@XmlElement(name = "processInstance", required = true)
+	List<ProcessInstance> processInstances = new ArrayList<>();
+
+	public List<ProcessInstance> getList() {
+		return processInstances;
+	}
 }

@@ -1,6 +1,6 @@
 /**
  * OpenKM, Open Document Management System (http://www.openkm.com)
- * Copyright (c) 2006-2017 Paco Avila & Josep Llort
+ * Copyright (c) Paco Avila & Josep Llort
  * <p>
  * No bytes were intentionally harmed during the development of this application.
  * <p>
@@ -21,18 +21,20 @@
 
 package com.openkm.rest.util;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "formElementsComplex")
-public class FormElementComplexList {
-    @XmlElement(name = "formElementComplex", required = true)
-    List<FormElementComplex> formElementsComplex = new ArrayList<FormElementComplex>();
+@XmlRootElement(name = "processDefinitionFormsList")
+public class ProcessDefinitionFormsList implements Serializable {
+	private static final long serialVersionUID = 1L;
+	@XmlElement(name = "processDefinitionForm", required = true)
+	List<ProcessDefinitionForm> processDefinitionForm = new ArrayList<>();
 
-    public List<FormElementComplex> getList() {
-        return formElementsComplex;
-    }
+	public List<ProcessDefinitionForm> getList() {
+		return processDefinitionForm;
+	}
 }
